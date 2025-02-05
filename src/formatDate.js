@@ -20,7 +20,7 @@ function formatDate(date, fromFormat, toFormat) {
 
   const yearKey = fromFormatObj['YYYY'] ? 'YYYY' : 'YY';
 
-  /* switch (yearKey) {
+  switch (yearKey) {
     case 'YYYY':
       fromFormatObj['YY'] = fromFormatObj[yearKey].slice(2);
       break;
@@ -30,15 +30,16 @@ function formatDate(date, fromFormat, toFormat) {
         ? `20${fromFormatObj[yearKey]}`
         : `19${fromFormatObj[yearKey]}`;
       break;
-  } */
+  }
 
-  if (yearKey === 'YY') {
-    fromFormatObj['YYYY'] = +fromFormatObj[yearKey] < 30
-      ? `20${fromFormatObj[yearKey]}`
-      : `19${fromFormatObj[yearKey]}`;
+  /* if (yearKey === 'YY') {
+    fromFormatObj['YYYY'] =
+      +fromFormatObj[yearKey] < 30
+        ? `20${fromFormatObj[yearKey]}`
+        : `19${fromFormatObj[yearKey]}`;
   } else {
     fromFormatObj['YY'] = fromFormatObj[yearKey].slice(2);
-  }
+  } */
 
   for (const value of toFormat.slice(0, 3)) {
     toFormatArr.push(fromFormatObj[value]);
